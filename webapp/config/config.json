@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "sakti",
+    "password": "shiva",
+    "database": "hireclub_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "sakti",
+    "password": "shiva",
+    "database": "hireclub_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "sakti",
+    "password": "shiva",
+    "database": "hireclub_prod",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
