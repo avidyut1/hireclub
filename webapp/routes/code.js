@@ -10,13 +10,18 @@ var sequelize = require('../config/database');
 var Code = require('../models/code.js')(sequelize, Sequelize);
 
 /* GET home page. */
+router.get('/:keyname', function (req, res, next) {
+    Code.findOne({where : {keyname: req.params.keyname}}).then(function (code){
+        res.send(code);
+    });
+});
+
 router.post('/', function(req, res, next) {
     var code = req.body.code;
     var input = req.body.input;
     var lang = req.body.lang || 'text';
     var uid = uuid.v1();
-    var keyName = uid + '.' + lang;
-    Code.create({code: code, lang: lang, keyname: uid}).then(function (Code) {
+    Code.create({code: code, lang: lang, keyname: uid, input: input}).then(function (Code) {
         console.log(Code);
         res.send({result: 'success', url: uid});
    });

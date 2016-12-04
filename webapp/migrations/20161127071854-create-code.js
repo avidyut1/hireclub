@@ -17,6 +17,9 @@ module.exports = {
       keyname:{
         type: Sequelize.STRING
       },
+      input: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
